@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .create{
+        border: 2px solid;
+        /* border-radius: 300px; */
+        width: 500px;
+        background-color:rgb(248, 137, 137);
+        margin-top: 10%;
+    }
+</style>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><h2>{{ message }}</h2></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <form method="POST">
+        <center>
+            <div class="create">
+                <label>Enter username</label><br/>
+                <input type="text" placeholder="Enter name" name="username"/><br><br/>
+                <label>Enter Email</label><br/>
+                <input type="text" placeholder="Enter email" name="email"/><br><br/>
+                <label>Enter password</label><br/>
+                <input type="text" placeholder="Enter password" name="password"/><br><br/>
+                <label>Confirm Password</label><br/>
+                <input type="text" placeholder="Confirm password" name="cpassword"/><br><br/>
+                <button>Submitt</button>
+            </div>
+        </center>
+    </form>
+</body>
+</html>

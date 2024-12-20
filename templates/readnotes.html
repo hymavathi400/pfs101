@@ -1,0 +1,36 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> -->
+<!-- </head> -->
+{% extends 'dashboard.html' %}
+<style> -->
+     .add{
+        background-color: rgba(245, 93, 55, 0.696);
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 10%;
+        height: 200px;
+    } 
+ </style>
+ {% with messages = get_flashed_messages() %}
+ {% if messages %}
+   {% for message in messages %}
+     <center><h2>{{ message }}</h2></center>
+   {% endfor %}
+ {% endif %}
+{% endwith %}
+ {% block content %}
+        <div class="add">
+            <center>
+                <h1>{{notesdata[3]}}</h1>
+                <label>Title</label><br/>
+                <input type="text" placeholder="title" name="title" value="{{notesdata[1]}}"readonly/><br><br/>
+                <label>Description</label><br/>
+                <input type="text" placeholder="Description" name="content" value="{{notesdata[2]}}"readonly/><br><br/>
+                <!-- <button>Submitt</button> -->
+            </center>
+        </div>
+    {% endblock %}

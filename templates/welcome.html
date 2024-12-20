@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .welcome{
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left: 20%;
+        margin-right: 20%;
+        background-color: rgb(185, 130, 236);
+        height: 200px;
+    }
+</style>
+<body>
+    <div>
+        <center class="welcome">
+            <h1>Welcome to Simple Note Project</h1>
+            <button><a href="{{url_for('create')}}">create</button><br><br/></a>
+            <button><a href="{{url_for('login')}}">login</button></a>
+
+        </center>
+    </div>
+</body>
+</html>

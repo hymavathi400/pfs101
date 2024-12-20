@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <style>
+    .view{
+        height: 600px;
+        width: 300px;
+    }
+
+</style> -->
+
+<body>
+    <center>
+        <table border="2">
+            <thead>
+                <tr>
+
+                    <th>Notes</th>
+                    <th>Title</th>
+                    <th>Created time</th>
+                    <th>link</th>
+            </tr>
+                
+        </thead>
+        <tbody>
+            {% for i in notesdata %}
+            <tr>
+
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td><a href="{{url_for('readnotes',nid=i[0])}}">View</a></td>
+                <td><a href="{{url_for('updatenotes',nid=i[0])}}">Update</a></td>
+                <td><a href="{{url_for('delete',nid=i[0])}}">delete</a></td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   
+    <!-- <form method="POST">
+        <div class="view">
+        <center>
+            <table border="2">
+                <tr>
+                    <th>v_id</th>
+                    <th>title</th>
+                </tr>
+                {% for i in notesdata %}
+                <tr>
+                    <td>{{i[0]}}</td>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+
+                    <td>
+                        <td></td>
+                        <td></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <td></td>
+                        <td></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <td></td>
+                        <td></td>
+                    </td>
+                </tr>
+                {% endfor %}
+
+
+            </table>
+            <!-- <label>Title</label><br/>
+            <input type="text" placeholder="title" name="title"/><br><br/>
+            <label>Description</label><br/>
+            <input type="text" placeholder="title" name="content"/><br><br/> -->
+        <!-- </center> -->
+    </div>
+<!-- </form> 
+ </center>
+
+</body>
+</html>

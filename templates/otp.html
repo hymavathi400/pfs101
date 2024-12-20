@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .otp{
+        border: 2px solid;
+        border-radius: 50px;
+        width: 30%;
+        margin-top: 10%;
+        margin-left: 30%;
+        margin-right: 20%;
+        margin-bottom: 20%;
+    }
+</style>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <center><h2>{{ message }}</h2></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<body>
+    <form method="POST"><br><br/>
+        <div class="otp">
+            <center>
+                <label>Enter your OTP</label><br><br/>
+                <input type="text" placeholder="Enter your otp" name="otp"/><br><br/>
+                <button>Submitt</button>
+            </center>
+        </div>
+    </form>
+    
+</body>
+</html>
